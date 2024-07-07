@@ -7,6 +7,7 @@ project(dsalcpp)
 # 头文件路径
 include_directories(
     ${PROJECT_SOURCE_DIR}/data_struct
+    ${PROJECT_SOURCE_DIR}/data_struct/array
 )
 
 file(GLOB_RECURSE SRC_FILES

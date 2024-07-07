@@ -38,7 +38,7 @@ public:
         return (this != &obj);
     }
 
-    virtual ~Object() = 0;
+    virtual ~Object() {}
 };
 
 
