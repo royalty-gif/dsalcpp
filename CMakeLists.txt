@@ -1,0 +1,18 @@
+# cmake最低版本要求
+cmake_minimum_required(VERSION 3.7)
+
+# 项目名称
+project(dsalcpp)
+
+# 头文件路径
+include_directories(
+    ${PROJECT_SOURCE_DIR}/data_struct
+)
+
+file(GLOB_RECURSE SRC_FILES
+    ${PROJECT_SOURCE_DIR}/algorithm
+    ${PROJECT_SOURCE_DIR}/example
+)
+
+add_executable(${PROJECT_NAME} main.cpp ${SRC_FILES})
+
