@@ -8,6 +8,7 @@ project(dsalcpp)
 include_directories(
     ${PROJECT_SOURCE_DIR}/data_struct
     ${PROJECT_SOURCE_DIR}/data_struct/array
+    ${PROJECT_SOURCE_DIR}/data_struct/list
 )
 
 file(GLOB_RECURSE SRC_FILES
