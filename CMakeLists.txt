@@ -12,8 +12,8 @@ include_directories(
 )
 
 file(GLOB_RECURSE SRC_FILES
-    ${PROJECT_SOURCE_DIR}/algorithm
-    ${PROJECT_SOURCE_DIR}/example
+    ${PROJECT_SOURCE_DIR}/algorithm/*.cpp
+    ${PROJECT_SOURCE_DIR}/example/*.cpp
 )
 
 add_executable(${PROJECT_NAME} main.cpp ${SRC_FILES})
