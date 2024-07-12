@@ -6,7 +6,6 @@
 #define _LINKLIST_HPP_
 
 #include "List.hpp"
-
 namespace dsalcpp
 {
 
@@ -19,7 +18,8 @@ protected:
         T value;
     };
 
-    struct : public Object {
+    // mutable意味着是可变的，为了让position函数可以编译过    
+    mutable struct : public Object {
         Node* next;
         char reserved[sizeof(T)];
     } header_;
@@ -28,10 +28,10 @@ protected:
     int step_;
     Node* current_;
 
-    Node* position(int i) {
-        Node* ret = reinterpret_cast<Node*>(*header_);
+    Node* position(int i) const {
+        Node* ret = reinterpret_cast<Node*>(&header_);
 
-        for( int p = 0; p < i; i++) {
+        for(int p = 0; p < i; p++) {
             ret = ret->next;
         }
 

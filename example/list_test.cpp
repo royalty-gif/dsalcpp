@@ -1,6 +1,7 @@
 #include <iostream>
 #include "StaticList.hpp"
 #include "DynamicList.hpp"
+#include "StaticLinkList.hpp"
 
 using namespace dsalcpp;
 
@@ -41,5 +42,16 @@ void listTest() {
 
     for(int i = 0; i < dList.capacity(); i++) {
         std::cout << dList[i] << std::endl;
+    }
+
+    std::cout << "Static Link List Test" << std::endl;
+    StaticLinkList<int, 5> sLinkList;
+
+    for (int i = 0; i < sLinkList.capacity(); i++) {
+        sLinkList.insert(i);
+    }
+
+    for(int i = 0; i < sLinkList.capacity(); i++) {
+        std::cout << sLinkList.get(i) << std::endl;
     }
 }
