@@ -6,7 +6,6 @@
 #define _STATICLINKLIST_HPP_
 
 #include "LinkList.hpp"
-#include <cstddef>
 
 namespace dsalcpp
 {

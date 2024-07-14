@@ -1,5 +1,5 @@
 /**
- *  @brief: 链式线性表类模板
+ *  @brief: 链式线性表类模板（单链表）
  */
 
 #ifndef _LINKLIST_HPP_
@@ -124,9 +124,7 @@ public:
     virtual T get(int i) const {
         T ret;
 
-        if( get(i, ret) ) {
-            return ret;
-        } else {
+        if( !get(i, ret) ) 
             THROW_EXCEPTION(IndexOutOfBoundsException, "Invalid parameter i to get element...");
         }
 
