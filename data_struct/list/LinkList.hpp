@@ -124,7 +124,7 @@ public:
     virtual T get(int i) const {
         T ret;
 
-        if( !get(i, ret) ) 
+        if( !get(i, ret) ) {
             THROW_EXCEPTION(IndexOutOfBoundsException, "Invalid parameter i to get element...");
         }
 
