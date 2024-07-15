@@ -6,6 +6,7 @@
 #define _LINKLIST_HPP_
 
 #include "List.hpp"
+#include "Exception.hpp"
 namespace dsalcpp
 {
 
