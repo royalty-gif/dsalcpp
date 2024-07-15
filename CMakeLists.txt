@@ -9,6 +9,7 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/data_struct
     ${PROJECT_SOURCE_DIR}/data_struct/array
     ${PROJECT_SOURCE_DIR}/data_struct/list
+    ${PROJECT_SOURCE_DIR}/data_struct/stack
 )
 
 file(GLOB_RECURSE SRC_FILES
