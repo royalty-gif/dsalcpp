@@ -13,10 +13,11 @@ void stackTest() {
     }
 
     while(stack.size() > 0) {
-        int top = stack.top();
-        std::cout << top << std::endl;
+        std::cout << stack.top() << " ";
         stack.pop();
     }
+
+    std::cout << std::endl;
 
     std::cout << "LinkStack test" << std::endl;
     LinkStack<int> linkStack;
@@ -25,8 +26,9 @@ void stackTest() {
     }
 
     while(linkStack.size() > 0) {
-        int top = linkStack.top();
-        std::cout << top << std::endl;
+        std::cout << linkStack.top() << " ";
         linkStack.pop();
     }
+
+    std::cout << std::endl;
 }

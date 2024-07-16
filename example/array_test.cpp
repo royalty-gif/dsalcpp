@@ -14,8 +14,10 @@ void arrayTest() {
     }
 
     for (int i = 0; i < a.length(); i++) {
-        std::cout << a[i] << std::endl;
+        std::cout << a[i] << " ";
     }
+
+    std::cout << std::endl;
 
     std::cout << "================" << std::endl;
 
@@ -25,13 +27,17 @@ void arrayTest() {
     }
 
     for (int i = 0; i < b.length(); i++) {
-        std::cout << b[i] << std::endl;
+        std::cout << b[i] << " ";
     }
+
+    std::cout << std::endl;
 
     std::cout << "resize" << std::endl;
     b.resize(5);
 
     for (int i = 0; i < b.length(); i++) {
-        std::cout << b[i] << std::endl;
+        std::cout << b[i] << " ";
     }
+
+    std::cout << std::endl;
 }

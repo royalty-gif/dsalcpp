@@ -17,8 +17,9 @@ void listTest() {
     }
 
     for(int i = 0; i < sList.capacity(); i++) {
-        std::cout << sList[i] << std::endl;
+        std::cout << sList[i] << " ";
     }
+    std::cout << std::endl;
 
     std::cout << "length: " << sList.length() << std::endl;
 
@@ -36,8 +37,10 @@ void listTest() {
     }
 
     for(int i = 0; i < dList.capacity(); i++) {
-        std::cout << dList[i] << std::endl;
+        std::cout << dList[i] << " ";
     }
+
+    std::cout << std::endl;
 
     dList.resize(2);
 
@@ -53,8 +56,10 @@ void listTest() {
     }
 
     for(int i = 0; i < sLinkList.capacity(); i++) {
-        std::cout << sLinkList.get(i) << std::endl;
+        std::cout << sLinkList.get(i) << " ";
     }
+
+    std::cout << std::endl;
 
     std::cout << "Dual circle List Test" << std::endl;
 
@@ -65,16 +70,20 @@ void listTest() {
     }
 
     for(int i = 0; i < dualCircleList.length(); i++) {
-        std::cout << dualCircleList.get(i) << std::endl;
+        std::cout << dualCircleList.get(i) << " ";
     }
+
+    std::cout << std::endl;
 
     dualCircleList.move(0);
     std::cout << "remove 2" << std::endl;
     dualCircleList.remove(2);
 
     for(int i = 0; i < dualCircleList.length(); i++) {
-        std::cout << dualCircleList.get(i) << std::endl;
+        std::cout << dualCircleList.get(i) << " ";
     }
+
+    std::cout << std::endl;
 
     std::cout << "current: " << dualCircleList.current() << std::endl;
     dualCircleList.next();
