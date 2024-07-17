@@ -7,7 +7,7 @@
 #define _DUALCIRCLELIST_HPP_
 
 #include "DualLinkList.hpp"
-#include "LinuxList.hpp"
+#include "LinuxList.h"
 
 namespace dsalcpp
 {
