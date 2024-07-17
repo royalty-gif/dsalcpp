@@ -1,6 +1,7 @@
 #include <iostream>
 #include "StaticQueue.hpp"
 #include "LinkQueue.hpp"
+#include "DualEndQueue.hpp"
 
 
 using namespace dsalcpp;
@@ -32,4 +33,24 @@ void queueTest() {
     }
 
     std::cout << std::endl;
+
+    std::cout << "DualEndQueue test" << std::endl;
+    DualEndQueue<int> dqueue;
+
+    for (int i = 0; i < 10; i++) {
+        dqueue.add(i);
+    }
+
+    std::cout << "front: " << dqueue.front() << std::endl;
+    std::cout << "back: " << dqueue.back() << std::endl;
+
+    dqueue.dismiss();
+
+    std::cout << "front: " << dqueue.front() << std::endl;
+    std::cout << "back: " << dqueue.back() << std::endl;
+
+    dqueue.remove();
+
+    std::cout << "front: " << dqueue.front() << std::endl;
+    std::cout << "back: " << dqueue.back() << std::endl;
 }
