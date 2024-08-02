@@ -25,6 +25,44 @@ private:
         b = t;
     }
 
+    template< typename T >
+    static void merge(T array[], T helper[], int begin, int mid, int end, bool min2max = true) {
+        int i = begin;
+        int j = mid + 1;
+        int k = begin;
+
+        while( (i <= mid) && (j <= end) ) {
+            if( min2max ? (array[i] < array[j]) : (array[i] > array[j]) ) {
+                helper[k++] = array[i++];
+            } else {
+                helper[k++] = array[j++];
+            }
+        }
+
+        while( i <= mid ) {
+            helper[k++] = array[i++];
+        }
+
+        while( j <= end ) {
+            helper[k++] = array[j++];
+        }
+
+        for(int i = begin; i < end; i++) {
+            array[i] = helper[i];
+        }
+    }
+
+    template< typename T >
+    static void merge(T array[], T helper[], int begin, int end, bool min2max = true) {
+        if( begin < end ) {
+            int mid = (begin + end) / 2;
+
+            merge(array, helper, begin, mid, min2max);
+            merge(array, helper, mid+1, end, min2max);
+            merge(array, helper, begin, mid, end, min2max);
+        }
+    }
+
 public:
     template< typename T >
     static void select(T array[], int len, bool min2max = true) {
@@ -100,6 +138,17 @@ public:
                 }
             }
         }
+    }
+
+    template < typename T >
+    static void merge(T array[], int len, bool min2max = true) {
+        T* helper = new T[len];
+
+        if( helper != nullptr ) {
+            merge(array, helper, 0, len-1, min2max);
+        }
+
+        delete[] helper;
     }
 };
 
