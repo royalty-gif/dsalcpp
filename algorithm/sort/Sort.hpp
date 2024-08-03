@@ -189,6 +189,38 @@ public:
     static void quick(T array[], int len, bool min2max = true) {
         quick(array, 0, len-1, min2max);
     }
+
+
+    // 以下是Array的接口
+    template< typename T >
+    static void select(Array<T>& array, bool min2max = true) {
+        select(array.array(), array.length(), min2max);
+    }
+
+    template< typename T >
+    static void insert(Array<T>& array, bool min2max = true) {
+        insert(array.array(), array.length(), min2max);
+    }
+
+    template< typename T >
+    static void shell(Array<T>& array, bool min2max = true) {
+        shell(array.array(), array.length(), min2max);
+    }
+
+    template< typename T >
+    static void bubble(Array<T>& array, bool min2max = true) {
+        bubble(array.array(), array.length(), min2max);
+    }
+
+    template< typename T >
+    static void merge(Array<T>& array, bool min2max = true) {
+        merge(array.array(), array.length(), min2max);
+    }
+
+    template< typename T >
+    static void quick(Array<T>& array, bool min2max = true) {
+        quick(array.array(), array.length(), min2max);
+    }
 };
 
 }
