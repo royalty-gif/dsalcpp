@@ -63,6 +63,40 @@ private:
         }
     }
 
+    template< typename T >
+    static int position(T array[], int begin, int end, bool min2max = true) {
+        T pv = array[begin];
+
+        while(begin < end) {
+
+            while((begin < end) && (min2max ? (array[end] > pv) : (array[end] < pv))) {
+                end--;
+            }
+
+            swap(array[begin], array[end]);
+
+            while((begin < end) && (min2max ? (array[begin] <= pv) : (array[begin] >= pv))) {
+                begin++;
+            }
+
+            swap(array[begin], array[end]);
+        }
+
+        array[begin] = pv;
+
+        return begin;
+    }
+
+    template< typename T >
+    static void quick(T array[], int begin, int end, bool min2max = true) {
+        if(begin < end) {
+            int pivot = position(array, begin, end, min2max);
+
+            quick(array, begin, pivot-1, min2max);
+            quick(array, pivot+1, end, min2max);
+        }
+    }
+
 public:
     template< typename T >
     static void select(T array[], int len, bool min2max = true) {
@@ -140,7 +174,7 @@ public:
         }
     }
 
-    template < typename T >
+    template< typename T >
     static void merge(T array[], int len, bool min2max = true) {
         T* helper = new T[len];
 
@@ -149,6 +183,11 @@ public:
         }
 
         delete[] helper;
+    }
+
+    template< typename T >
+    static void quick(T array[], int len, bool min2max = true) {
+        quick(array, 0, len-1, min2max);
     }
 };
 
