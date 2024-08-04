@@ -11,6 +11,7 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/data_struct/list
     ${PROJECT_SOURCE_DIR}/data_struct/stack
     ${PROJECT_SOURCE_DIR}/data_struct/queue
+    ${PROJECT_SOURCE_DIR}/data_struct/tree
     ${PROJECT_SOURCE_DIR}/data_struct/extra
 
     ${PROJECT_SOURCE_DIR}/algorithm/sort
